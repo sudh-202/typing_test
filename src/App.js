@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import randomWords from "random-words";
+import "./app.css";
 const NUMB_OF_WORDS = 200;
 const SECONDS = 60;
 
@@ -106,32 +107,124 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        width: "100vw",
+        maxWidth: "100%",
+        // margin: "100px",
+        paddingTop: "150px",
+        paddingBottom: "200px",
+        backgroundColor: "#211D1E",
+        border: "20px solid white",
+        borderRadius: "150px",
+      }}
+    >
       <div className="section">
-        <div className="is-size-1 has-text-centered has-text-primary">
-          <h2>{countDown}</h2>
+        <div className="is-size-1 has-text-centered has-text-primary ">
+          <h1
+            style={{
+              fontSize: "80px",
+              fontWeight: "bolder",
+              color: "ButtonShadow",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            Typing Speed Test
+          </h1>
+          <h2
+            style={{
+              fontSize: "60px",
+              fontWeight: "bolder",
+              color: "#196FC7",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            {countDown}
+          </h2>
         </div>
       </div>
-      <div className="control is-expanded section">
-        <input
-          ref={textInput}
-          disabled={status !== "started"}
-          type="text"
-          className="input"
-          onKeyDown={handleKeyDown}
-          value={currInput}
-          onChange={(e) => setCurrInput(e.target.value)}
-        />
+
+      <div
+        className="section"
+        style={{
+          margin: "0px",
+          padding: "20px",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <input
+            ref={textInput}
+            disabled={status !== "started"}
+            type="text"
+            className="input"
+            onKeyDown={handleKeyDown}
+            value={currInput}
+            onChange={(e) => setCurrInput(e.target.value)}
+            style={{
+              width: "100%", // Adjust the width as needed
+              height: "100px", // Adjust the height as needed
+              fontSize: "34px",
+              border: " 2px solid #black",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+            }}
+          />
+        </div>
       </div>
-      <div className="section">
-        <button className="button is-info is-fullwidth" onClick={start}>
-          Start
-        </button>
+      <div
+        className="section"
+        style={{
+          padding: "20px",
+        }}
+      >
+        <div
+          className="contain"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            // margin: "20px 20px",
+          }}
+        >
+          <button
+            // className="button"
+            onClick={start}
+            style={{
+              backgroundColor: "#0749ab",
+              padding: "0px",
+              color: "white",
+              width: "10%", // Adjust the width as needed
+              height: "50px", // Adjust the height as needed
+              fontSize: "24px",
+              borderRadius: "7px",
+
+              // border: " 2px solid #black",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            Start
+          </button>
+        </div>
       </div>
       {status === "started" && (
         <div className="section">
           <div className="card">
-            <div className="card-content">
+            <div
+              className="card-content"
+              style={{
+                backgroundColor: "#211D1E",
+                color: "white",
+                border: "2px solid white ",
+                fontSize: "25px",
+              }}
+            >
               <div className="content">
                 {words.map((word, i) => (
                   <span key={i}>
