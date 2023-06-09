@@ -115,9 +115,9 @@ function App() {
         // margin: "100px",
         paddingTop: "150px",
         paddingBottom: "200px",
-        backgroundColor: "#211D1E",
+        backgroundColor: "#313335",
         border: "20px solid white",
-        borderRadius: "150px",
+        borderRadius: "50px",
       }}
     >
       <div className="section">
@@ -181,7 +181,7 @@ function App() {
       <div
         className="section"
         style={{
-          padding: "20px",
+          padding: "0px",
         }}
       >
         <div
@@ -194,19 +194,27 @@ function App() {
           }}
         >
           <button
-            // className="button"
+            className="start-button"
             onClick={start}
             style={{
               backgroundColor: "#0749ab",
-              padding: "0px",
+              // padding: "10px 20px",
               color: "white",
-              width: "10%", // Adjust the width as needed
-              height: "50px", // Adjust the height as needed
+              width: "21%",
+              "@media screen and (max-width: 1010px)": {
+                width: "30%",
+                padding: "0px",
+              },
+              height: "50px",
               fontSize: "24px",
               borderRadius: "7px",
 
               // border: " 2px solid #black",
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+              "@media screen and (max-width: 1010px)": {
+                width: "30%",
+                padding: "0 20px",
+              },
             }}
           >
             Start
